@@ -13,7 +13,15 @@ const scatterplot = () => new scatterplotLayer({
   radiusMaxPixels: 12,
   getPosition: d => d.geometry.coordinates,
   getFillColor: d => d.properties.fatalCount > 0 ? [200, 0, 40, 150] : [255, 140, 0, 100], //Set fill colour to red if fatal, orange otherwise.
-})
+});
+
+const heatmap = () => new HeatmapLayer({
+  id: 'heatlayer',
+  data: dataJson,
+  getPosition: d => d.geometry.coordinates,
+  getWeight: d => d.properties.seriousInjuryCount + (d.properties.minorInjuryCount * 0.5), //Weighting for fatalities and injuries
+  radiusPixels: 60,
+});
 
 
 window.initMap = () => {
@@ -27,6 +35,7 @@ window.initMap = () => {
   const overlay = new GoogleMapsOverlay({
     layers: [
       scatterplot(),
+      //heatmap(),
     ],
   });
 
