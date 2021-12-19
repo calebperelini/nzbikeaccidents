@@ -4,7 +4,9 @@ A (so-far) simple map of bicycle accidents across New Zealand, partly inspired a
 
 Data is taken from over 500,000 road traffic accidents between 2000-2020, taken from the Crash Analysis System (CAS) from Waka Kotahi, available on the Open Data Portal at https://opendata-nzta.opendata.arcgis.com/search?tags=CAS
 
-## Installation
+## Install and Run
+
+Simply clone the repo and run with npm.
 
 ```
 git clone <this-repo> 
