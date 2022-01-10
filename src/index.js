@@ -36,7 +36,7 @@ window.initMap = () => {
   const overlay = new GoogleMapsOverlay({
     layers: [
       scatterplot(),
-      //heatmap(),
+      heatmap(),
     ],
   });
 
